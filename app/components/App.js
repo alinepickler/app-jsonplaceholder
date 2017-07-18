@@ -4,37 +4,37 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: []
+      users: {},
+      posts: []
     };
   }
+
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(result=>result.json())
-      .then(items=>this.setState({items}))
-  }
-  /*
-  getQueryParam(param) {
-  	var vars = {};
-  	window.location.href.replace( location.hash, '' ).replace(
-  		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-  		function( m, key, value ) { // callback
-  			vars[key] = value !== undefined ? value : '';
-  		}
-  	);
+    var usersPromise = fetch('https://jsonplaceholder.typicode.com/users')
+      .then(result => result.json())
+      .then(users => {
+        var usersMap = {}
+        users.forEach(user => {
+          usersMap[user.id] = user
+        })
+        return usersMap
+      })
 
+    var postsPromise = fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(result => result.json())
 
-  	if ( param ) {
-  		return vars[param] ? vars[param] : null;
-  	}
-  	return vars;
+    Promise.all([usersPromise, postsPromise])
+      .then(promises => {
+        this.setState({users: promises[0], posts: promises[1]})
+      })
   }
 
-  var postId = getQueryParam('postId');
-*/
   render() {
+    // move into own component Post and pass post and user as props
+    // in Post component, add onClick listener to fetch comments
     return (
       <div>
-        {this.state.items.map(item=><li key={item.id}>{item.body}</li>)}
+        {this.state.posts.map(post => <li key={post.id}>{post.title} - {this.state.users[post.userId].name}</li>)}
       </div>
     );
   }
