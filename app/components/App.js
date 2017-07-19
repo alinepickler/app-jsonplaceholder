@@ -41,14 +41,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    // move into own component Post and pass post and user as props
-    // in Post component, add onClick listener to fetch comments
     return (
       <div>
-      /*  {this.state.posts.map(post => <li key={post.id}>{post.title} - {this.state.users[post.userId].name} - {this.state.comments[post.id].email}</li>)}  */
       <PostsList
       posts= {this.state.posts}
       users= {this.state.users}
+      comments= {this.state.comments}
       />
       </div>
     );
