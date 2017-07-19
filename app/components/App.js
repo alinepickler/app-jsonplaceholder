@@ -1,5 +1,5 @@
 import React from 'react';
-import Posts from './Posts';
+import PostsList from './PostsList';
 
 export default class App extends React.Component {
   constructor() {
@@ -46,7 +46,7 @@ export default class App extends React.Component {
     return (
       <div>
       /*  {this.state.posts.map(post => <li key={post.id}>{post.title} - {this.state.users[post.userId].name} - {this.state.comments[post.id].email}</li>)}  */
-      <Posts posts= {this.state.posts} />
+      <PostsList posts= {this.state.posts} />
       </div>
     );
   }
