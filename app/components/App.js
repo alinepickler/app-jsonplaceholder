@@ -46,7 +46,10 @@ export default class App extends React.Component {
     return (
       <div>
       /*  {this.state.posts.map(post => <li key={post.id}>{post.title} - {this.state.users[post.userId].name} - {this.state.comments[post.id].email}</li>)}  */
-      <PostsList posts= {this.state.posts} />
+      <PostsList
+      posts= {this.state.posts}
+      users= {this.state.users}
+      />
       </div>
     );
   }

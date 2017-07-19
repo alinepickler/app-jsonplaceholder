@@ -8,6 +8,7 @@ export default class PostsList extends React.Component {
           {this.props.posts.map(post =>
             <li key={post.id}>
               <Post
+              user={this.props.users[post.userId].name}
               title={post.title}
               body={post.body}
               />
