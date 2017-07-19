@@ -8,10 +8,9 @@ export default class PostsList extends React.Component {
           {this.props.posts.map(post =>
             <li key={post.id}>
               <Post
+              post={post}
               user={this.props.users[post.userId]}
-              title={post.title}
-              body={post.body}
-              comment={this.props.comments[post.id]}
+              comments={this.props.postsComments[post.id]}
               />
             </li>)
           }
