@@ -1,14 +1,15 @@
-/*import React from 'react';
+import React from 'react';
 
 export default class Post extends React.Component {
   render() {
     return (
-      <div>
-        <h3>Title</h3>
-        <span>test</span>
-        <h3>Body</h3>
-        <span>test</span>
-      </div>
+      <ul>
+          {this.props.posts.map(post => <li key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+            </li>)
+          }
+      </ul>
     );
   }
 }
