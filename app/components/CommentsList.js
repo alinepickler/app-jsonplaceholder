@@ -1,15 +1,25 @@
 import React from 'react';
-import Comment from './Comment';
 
 export default class CommentsList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comments: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/comments?postId=' + this.props.postId)
+      .then(result=>result.json())
+      .then(comments=>this.setState({comments}))
+  }
+
   render() {
     return (
       <ul>
-          {this.props.comments.map(comment =>
+          {this.state.comments.map(comment =>
             <li key={comment.id}>
-              <Comment
-              comment={comment}
-              />
+              {comment.email}
             </li>)
           }
       </ul>

@@ -10,7 +10,6 @@ export default class PostsList extends React.Component {
               <Post
               post={post}
               user={this.props.users[post.userId]}
-              comments={this.props.postsComments[post.id]}
               />
             </li>)
           }

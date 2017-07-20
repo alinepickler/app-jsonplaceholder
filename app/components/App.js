@@ -8,7 +8,6 @@ export default class App extends React.Component {
     this.state = {
       posts: [],
       users: {},
-      postsComments: {}
     };
   }
 
@@ -25,7 +24,7 @@ export default class App extends React.Component {
         })
         return usersMap
     })
-
+/*
     var postsCommentsPromise =
       fetch('https://jsonplaceholder.typicode.com/comments')
         .then(result => result.json())
@@ -39,13 +38,12 @@ export default class App extends React.Component {
           })
           return postsCommentsMap
       })
-
-    Promise.all([postsPromise, usersPromise, postsCommentsPromise])
+*/
+    Promise.all([postsPromise, usersPromise])
       .then(promises => {
         this.setState({
           posts: promises[0],
-          users: promises[1],
-          postsComments: promises[2]
+          users: promises[1]
         })
     })
   }
@@ -56,7 +54,6 @@ export default class App extends React.Component {
         <PostsList
         posts={this.state.posts}
         users={this.state.users}
-        postsComments={this.state.postsComments}
         />
       </div>
     );
