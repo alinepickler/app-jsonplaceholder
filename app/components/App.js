@@ -1,6 +1,5 @@
 import React from 'react';
 import PostsList from './PostsList';
-import ToggleDisplay from 'react-toggle-display';
 
 export default class App extends React.Component {
   constructor() {
@@ -24,21 +23,7 @@ export default class App extends React.Component {
         })
         return usersMap
     })
-/*
-    var postsCommentsPromise =
-      fetch('https://jsonplaceholder.typicode.com/comments')
-        .then(result => result.json())
-        .then(comments => {
-          var postsCommentsMap = {}
-          comments.forEach(comment => {
-            if (!postsCommentsMap[comment.postId]) {
-              postsCommentsMap[comment.postId] = []
-            }
-            postsCommentsMap[comment.postId].push(comment)
-          })
-          return postsCommentsMap
-      })
-*/
+    
     Promise.all([postsPromise, usersPromise])
       .then(promises => {
         this.setState({

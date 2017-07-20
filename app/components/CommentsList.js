@@ -19,7 +19,8 @@ export default class CommentsList extends React.Component {
       <ul>
           {this.state.comments.map(comment =>
             <li key={comment.id}>
-              {comment.email}
+              <h4>{comment.name}</h4>
+              <p>{comment.body}</p>
             </li>)
           }
       </ul>
