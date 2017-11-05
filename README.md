@@ -6,7 +6,7 @@ This project was created to adapt my previous project [json-placeholder](https:/
 
 ## Interface
 
-The interface style is not applied yet. It's possible to visualize the interface prototype on my [Portfolio page](https://alinepickler.github.io/web.html).
+The interface style is not applied yet. It's possible to visualize the interface prototype on my [Portfolio page](https://alinepickler.github.io/web.html#forum-row).
 
 ## Requirements
 
