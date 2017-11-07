@@ -1,5 +1,5 @@
 {
-  "name": "app-jsonplaceholder",
+  "name": "forum",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pickleraline@bitbucket.org/pickleraline/app-jsonplaceholder.git"
+    "url": "git+https://github.com/alinepickler/forum.git"
   },
   "author": "Aline Pickler",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/pickleraline/app-jsonplaceholder#readme",
+  "homepage": "https://github.com/alinepickler/forum",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
